@@ -3,7 +3,7 @@
 require 'jekyll/layout'
 require 'safe_yaml'
 
-module GuidesStyle18F
+module GuidesStyleCD
   # We have to essentially recreate the ::Jekyll::Layout constructor to loosen
   # the default restriction that layouts be included in the site source.
   class Layouts < ::Jekyll::Layout

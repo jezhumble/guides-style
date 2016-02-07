@@ -6,7 +6,7 @@ require 'fileutils'
 require 'minitest/autorun'
 require 'stringio'
 
-module GuidesStyle18F
+module GuidesStyleCD
   module RepositoryTestHelper
     attr_reader :testdir, :repo_dir, :outstream
 
@@ -52,12 +52,12 @@ check_ruby_version '2.1.5'
 command_group :dev, 'Development commands'
 
 def_command :update_nav, 'Update the \'navigation:\' data in _config.yml' do
-  GuidesStyle18F.update_navigation_configuration Dir.pwd
+  GuidesStyleCD.update_navigation_configuration Dir.pwd
 end
 
 def_command(
   :create_repo, 'Remove template files and create a new Git repository') do
-  GuidesStyle18F.clear_template_files_and_create_new_repository Dir.pwd
+  GuidesStyleCD.clear_template_files_and_create_new_repository Dir.pwd
 end
 
 def_command :update_theme, 'Update the guides_style_18f gem' do
@@ -73,7 +73,7 @@ check_ruby_version '2.1.5'
 command_group :dev, 'Development commands'
 
 def_command :update_nav, 'Update the \'navigation:\' data in _config.yml' do
-  GuidesStyle18F.update_navigation_configuration Dir.pwd
+  GuidesStyleCD.update_navigation_configuration Dir.pwd
 end
 
 def_command :update_theme, 'Update the guides_style_18f gem' do
@@ -95,9 +95,9 @@ GO_SCRIPT
         logfile.puts '*** Creating initial repository.'
         write_all_files
         write_go_script GO_SCRIPT_BEFORE
-        GuidesStyle18F.exec_cmd_capture_output 'git init', logfile
-        GuidesStyle18F.exec_cmd_capture_output 'git add .', logfile
-        GuidesStyle18F.exec_cmd_capture_output(
+        GuidesStyleCD.exec_cmd_capture_output 'git init', logfile
+        GuidesStyleCD.exec_cmd_capture_output 'git add .', logfile
+        GuidesStyleCD.exec_cmd_capture_output(
           'git commit -m "original repo"', logfile)
       end
     end
@@ -107,12 +107,12 @@ GO_SCRIPT
     include RepositoryTestHelper
 
     def test_empty_repo_dir_should_not_raise
-      GuidesStyle18F.remove_template_files repo_dir, outstream
+      GuidesStyleCD.remove_template_files repo_dir, outstream
     end
 
     def test_remove_all_template_files
       write_all_files
-      GuidesStyle18F.remove_template_files repo_dir, outstream
+      GuidesStyleCD.remove_template_files repo_dir, outstream
       assert template_files.none? { |file| File.exist? file }
       assert nontemplate_files.all? { |file| File.exist? file }
     end
@@ -123,14 +123,14 @@ GO_SCRIPT
 
     def test_remove_create_repo_command
       write_go_script RepositoryTestHelper::GO_SCRIPT_BEFORE
-      GuidesStyle18F.delete_create_repo_command_from_go_script(
+      GuidesStyleCD.delete_create_repo_command_from_go_script(
         repo_dir, outstream)
       assert_equal RepositoryTestHelper::GO_SCRIPT_AFTER, read_go_script
     end
 
     def test_create_repo_command_removal_should_be_idemptoent
       write_go_script RepositoryTestHelper::GO_SCRIPT_AFTER
-      GuidesStyle18F.delete_create_repo_command_from_go_script(
+      GuidesStyleCD.delete_create_repo_command_from_go_script(
         repo_dir, outstream)
       assert_equal RepositoryTestHelper::GO_SCRIPT_AFTER, read_go_script
     end
@@ -145,7 +145,7 @@ GO_SCRIPT
         logfile.sync = true
         create_initial_repo logfile
         logfile.puts LOG_TAIL_MARKER
-        GuidesStyle18F.clear_template_files_and_create_new_repository(
+        GuidesStyleCD.clear_template_files_and_create_new_repository(
           repo_dir, logfile)
       end
       assert_expected_final_repository_state log_path
@@ -198,7 +198,7 @@ LOG_TAIL
       open(log_path, 'w') do |logfile|
         logfile.sync = true
         Dir.chdir repo_dir do
-          GuidesStyle18F.exec_cmd_capture_output 'git status -s', logfile
+          GuidesStyleCD.exec_cmd_capture_output 'git status -s', logfile
         end
       end
       assert_equal STAGED_FILES_STATUS, File.read(log_path)

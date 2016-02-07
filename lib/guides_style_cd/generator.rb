@@ -2,7 +2,7 @@
 
 require 'jekyll'
 
-module GuidesStyle18F
+module GuidesStyleCD
   class Generator < ::Jekyll::Generator
     def generate(site)
       Layouts.register site

@@ -3,7 +3,7 @@
 require 'jekyll/static_file'
 require 'liquid'
 
-module GuidesStyle18F
+module GuidesStyleCD
   class Assets
     SOURCE = File.realpath File.join(__FILE__, '..', '..', '..')
     BEGIN_PATH = SOURCE.size + File::SEPARATOR.size

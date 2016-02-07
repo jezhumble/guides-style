@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'guides_style_18f/version'
+require 'guides_style_cd/version'
 
 Gem::Specification.new do |s|
-  s.name          = 'guides_style_18f'
-  s.version       = GuidesStyle18F::VERSION
+  s.name          = 'guides_style_cd'
+  s.version       = GuidesStyleCD::VERSION
   s.authors       = ['Mike Bland']
   s.email         = ['michael.bland@gsa.gov']
-  s.summary       = '18F Guides Template style elements'
+  s.summary       = 'CD Guides Template style elements'
   s.description   = (
-    'Provides consistent style elements for documents based on the ' \
+    'Provides consistent style elements for documents derived from the ' \
     '18F Guides Template (https://pages.18f.gov/guides-template/). ' \
     'The 18F Guides theme is based on ' \
     'DOCter (https://github.com/cfpb/docter/) from ' \

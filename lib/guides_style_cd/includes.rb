@@ -3,7 +3,7 @@
 require 'jekyll/tags/include'
 require 'liquid'
 
-module GuidesStyle18F
+module GuidesStyleCD
   class IncludeTag < ::Jekyll::Tags::IncludeTag
     ::Liquid::Template.register_tag 'guides_style_18f_include', self
 

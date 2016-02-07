@@ -1,7 +1,7 @@
 require 'jekyll/tags/include'
 require 'liquid'
 
-module GuidesStyle18F
+module GuidesStyleCD
   class ShouldExpandNavTag < ::Liquid::Tag
     NAME = 'guides_style_18f_should_expand_nav'
     ::Liquid::Template.register_tag(NAME, self)

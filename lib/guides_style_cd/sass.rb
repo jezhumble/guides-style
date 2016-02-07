@@ -2,11 +2,11 @@
 
 require 'sass'
 
-module GuidesStyle18F
+module GuidesStyleCD
   class Sass
     DIR = File.join File.dirname(__FILE__), 'sass'
     GUIDES_STYLES_FILE = File.join DIR, 'guides_style_18f.scss'
   end
 end
 
-Sass.load_paths << ::GuidesStyle18F::Sass::DIR
+Sass.load_paths << ::GuidesStyleCD::Sass::DIR

@@ -3,7 +3,7 @@ require_relative '../lib/guides_style_18f/tags'
 require 'liquid'
 require 'minitest/autorun'
 
-module GuidesStyle18F
+module GuidesStyleCD
   class ShouldExpandNavTagTest < ::Minitest::Test
     attr_reader :should_expand_nav, :context, :parent_item
 

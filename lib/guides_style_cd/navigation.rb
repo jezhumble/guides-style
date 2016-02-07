@@ -3,7 +3,7 @@
 require 'jekyll'
 require 'safe_yaml'
 
-module GuidesStyle18F
+module GuidesStyleCD
   module FrontMatter
     EXTNAMES = %w(.md .html)
 

@@ -3,7 +3,7 @@
 require 'English'
 require 'fileutils'
 
-module GuidesStyle18F
+module GuidesStyleCD
   TEMPLATE_FILES = %w(
     _pages/add-a-new-page/make-a-child-page.md
     _pages/add-a-new-page.md
