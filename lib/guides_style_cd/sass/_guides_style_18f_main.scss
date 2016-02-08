@@ -46,8 +46,8 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: "Raleway", Arial, sans-serif;
-    font-weight: 600;
+    font-family: "Open Sans Condensed", Arial, sans-serif;
+    font-weight: 700;
 }
 
 .site-title {
@@ -136,7 +136,8 @@ a:focus {
 }
 
 a.title-link {
-    color: #75787B;
+    color: #000000;
+    text-transform: uppercase;
 }
 
 a.title-link:hover,
@@ -192,7 +193,7 @@ Navigation
 .sidebar-nav a:active,
 .sidebar-nav .sidebar-nav-active > a {
   color: #74767B;
-  border-left: 4px solid #1188ff;
+  border-left: 4px solid #fc7f00;
   background-color: transparent;
 }
 
@@ -323,14 +324,17 @@ section:before {
 }
 
 header {
-    border-bottom: 4px solid #1188ff;
+    border-bottom: 4px solid #fc7f00;
     background-color: #fff;
     padding: 2em 0;
+    background-image: url('/images/header.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 header div.wrap{
     position: relative;
-    padding-top: 2.4em;
+    padding: 0em 2em 2.4em;
 }
 
 header div.wrap::after{
