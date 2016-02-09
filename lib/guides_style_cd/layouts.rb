@@ -32,7 +32,8 @@ module GuidesStyleCD
     private :parse_content_and_data
 
     def self.register(site)
-      site.layouts['guides_style_18f_default'] = new site, 'default'
+      site.layouts['guides_style_cd_default'] = new site, 'default'
+      site.layouts['post'] = new site, 'post'
     end
   end
 end
