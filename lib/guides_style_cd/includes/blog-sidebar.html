@@ -1,8 +1,27 @@
 <aside>
+  <p class="intro">{{ site.subtitle }}</p>
+  <nav class="sidebar-nav" role="navigation">
+    <ul>{% for link in site.navigation %}{% capture parent_url %}/{{ link.url }}{% endcapture %}
+        <li class="group {% if link.text == 'Blog' %}sidebar-nav-active{% endif %}">
+          <a href="{% if link.internal == true %}{{ site.baseurl }}/{% endif %}{{ link.url }}"  
+            title="{% if link.text == 'Blog' %}Current Page
+                  {% else %}{{ link.text }}{% endif %}">{{ link.text }}</a>
+          {% assign parent = link %}
+      {% guides_style_18f_include sidebar-children.html %}
+        </li>{% endfor %}
+    </ul>
+  </nav>
+          {% guides_style_18f_include resources.html %}  
+</aside>
+
+    <!--
+<aside>
 <ul class="post-list">
     {% for post in site.posts %}
       <li><a class="post-link" href="{{ post.url | prepend:
   site.baseurl }}">{{ post.title }}</a> ({{ post.date | date: "%b %-d, %Y" }})</li>
     {% endfor %}
   </ul>
-</aside>
+          {% guides_style_18f_include resources.html %}
+  </aside>
+  -->
