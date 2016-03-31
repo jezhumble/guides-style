@@ -1,5 +1,5 @@
 <aside>
-  <p class="intro">{{ site.subtitle }}</p>
+<p class="intro">{{ site.subtitle }}</p>
   <nav class="sidebar-nav" role="navigation">
     <ul>{% for link in site.navigation %}{% capture parent_url %}/{{ link.url }}{% endcapture %}
         <li class="group {% if page.url == parent_url %}sidebar-nav-active{% endif %}">
@@ -10,6 +10,12 @@
           {% guides_style_18f_include sidebar-children.html %}
         </li>{% endfor %}
     </ul>
-  </nav>
-          {% guides_style_18f_include resources.html %}  
+    </nav>
+    <br />
+<div style="border: 1px solid black; padding: 5px;"><strong>Please help us create
+  peer-reviewed research on continuous delivery and its impact on IT performance by taking the <a href="https://bit.ly/2016-devops-survey">2016
+  State of Devops Survey</a>. It's the best thing you can do
+  with 20m and a cup of tea today.</strong></div>
+
+  {% guides_style_18f_include resources.html %}  
 </aside>
