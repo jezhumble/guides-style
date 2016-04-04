@@ -27,7 +27,8 @@
       <div class="wrap content">
 
         <section id="main" class="main-content" role="main">
-          <h2>{{ page.title }}</h2>
+	<h2>{{ page.title }}</h2>
+	<em>Published {{ page.date | date: '%d %B %Y' }}</em>
 	{{ content }}
 	         {% guides_style_18f_include buttons.html %}
 
